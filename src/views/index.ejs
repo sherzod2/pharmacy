@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/main.css" />
+    <title>apteka.uz</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="dropdown">
+          <form
+            class="header__form"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+          >
+            <input
+              type="text"
+              name="search"
+              class="form-control header__search-input"
+              placeholder="search"
+              aria-label="Username"
+              aria-describedby="addon-wrapping"
+            />
+          </form>
+
+          <ul class="dropdown-menu w-100">
+            <li class="dropdown-item">Action</li>
+            <li class="dropdown-item">Another action</li>
+            <li class="dropdown-item">Something else here</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="med-pharm">
+        <div class="container">
+          <div class="med-pharm__body">
+            <div class="pharmacies w-25">
+              <ul class="pharmacies__list list-group">
+                <% pharmacies?.map((pharmacy) => { %>
+                <li
+                  class="list-group-item pharmacies__list-li"
+                >
+                  <p class="pharmacies__item" data-id="<%= pharmacy.id %> "><%= pharmacy.name %></p>
+                  <span class="pharmacies__edit" data-id="<%= pharmacy.id %> " data-name="<%= pharmacy.name %> " data-address="<%= pharmacy.address %> " data-bs-toggle="modal"
+                    data-bs-target="#BackdropEdit">e</span>
+                  <span class="pharmacies__delete" data-id="<%= pharmacy.id %> ">d</span>
+                </li>
+                <% }) %>
+              </ul>
+            </div>
+
+            <div class="edit__pharmasy">
+              <div
+                class="modal fade"
+                id="BackdropEdit"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Edit pharmacy</h5>
+                    </div>
+                    <div class="modal-body">
+                      <form class="edit-pharm" >
+                        <div class="input-group mb-3">
+                          <input
+                            type="text"
+                            name="name"
+                            class="form-control edit-pharmacy-name"
+                            placeholder="name"
+                            aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default"
+                          />
+                        </div>
+                        <div class="input-group mb-3">
+                          <input
+                            type="text"
+                            name="address"
+                            class="form-control edit-pharmacy-address"
+                            placeholder="address"
+                            aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default"
+                          />
+                        </div>
+                        <div class="input-group mb-3">
+                          <input
+                            type="text"
+                            name="id"
+                            class="form-control edit-pharmacy-id visually-hidden"
+                            placeholder="address"
+                            aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default"
+                          />
+                        </div>
+                        <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                        <button
+                        type="submit"
+                        data-bs-dismiss="modal"
+                        class="btn btn-primary"
+                      >
+                        Edit
+                      </button>
+                      </form>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="medicine w-25 hidden">
+              <div class="card" style="width: 18rem">
+                <div class="card-body">
+                  <h3 class="card-title"><%= medicines[0]?.name %></h2>
+                  <p class="card-text"><%= medicines[0]?.desc %></p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="add__medicine">
+              <div
+                class="modal fade"
+                id="staticBackdropMedEdit"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Edit medicine</h5>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="input-group mb-3">
+                          <input
+                            type="text"
+                            class="form-control edit-medicine-name"
+                            name="name"
+                            placeholder="name"
+                            aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default"
+                            required
+                          />
+                        </div>
+                        <div class="input-group mb-3">
+                          <input
+                            type="text"
+                            class="form-control edit-medicine-desc"
+                            name="desc"
+                            placeholder="desc..."
+                            aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default"
+                            required
+                          />
+                        </div>
+                        <select
+                          name="selectPharmacy"
+                          class="form-select add__medicine mb-3"
+                          aria-label="Default select example"
+                          required
+                        >
+                          <!-- <option selected disabled>Select Pharmacy</option> -->
+                          <% pharmacies?.map((pharmacy) => { %>
+                          <option class="edit-select-pharm" value="<%= pharmacy.id %> ">
+                            <%= pharmacy.name %>
+                          </option>
+                          <% }) %>
+                        </select>
+                        <input
+                            type="text"
+                            class="form-control edit-medicine-id visually-hidden"
+                            name="id"
+                            placeholder="desc..."
+                            aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default"
+                            required
+                          />
+                        <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button
+                        type="submit"
+                        data-bs-dismiss="modal"
+                        class="btn btn-primary"
+                      >
+                        Edit
+                      </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="medicines w-25">
+              <ul class="list-group medicines__list">
+                <% medicines?.map((medicine) => { %>
+                <li class="list-group-item medicines__list-li">
+                  <p class="medicines__item" data-desc="<%= medicine.desc %>" data-name="<%= medicine.name %> "><%= medicine.name %></p>
+                  <span
+                    class="medicines__edit"
+                    data-bs-toggle="modal"
+                    data-bs-target="#staticBackdropMedEdit"
+                    data-id="<%= medicine?.id %> "
+                    data-name="<%= medicine.name %> "
+                    data-desc="<%= medicine.desc %> "
+                    data-pharm-id="<%= medicine.pharmacy_id %> "
+                  >e</span>
+                  <span class="medicines__delete" data-pharm-id="<%= medicine.pharmacyId %> " data-id="<%= medicine.id %> ">d</span>
+                </li>
+                <% }) %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="add">
+        <div class="container">
+          <div class="add__body">
+            <!-- deeeeeeeeeee -->
+            <!-- deeeeeeeeeee -->
+            <div class="add__pharmasy">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#Backdrop"
+              >
+                Add Pharmacy
+              </button>
+              <div
+                class="modal fade"
+                id="Backdrop"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">New pharmacy</h5>
+                    </div>
+                    <div class="modal-body">
+                      <form action="/newPharmacy" method="POST" enctype="application/x-www-form-urlencoded">
+                        <div class="input-group mb-3">
+                          <input
+                            type="text"
+                            name="name"
+                            class="form-control"
+                            placeholder="name"
+                            aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default"
+                          />
+                        </div>
+                        <div class="input-group mb-3">
+                          <input
+                            type="text"
+                            name="address"
+                            class="form-control"
+                            placeholder="address"
+                            aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default"
+                          />
+                        </div>
+                        <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                        <button
+                        type="submit"
+                        data-bs-dismiss="modal"
+                        class="btn btn-primary"
+                      >
+                        Add
+                      </button>
+                      </form>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- add med -->
+            <!-- add med -->
+            <!-- add med -->
+            <div class="add__medicine">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+              >
+                Add Medicine
+              </button>
+              <div
+                class="modal fade"
+                id="staticBackdrop"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">New medicine</h5>
+                    </div>
+                    <div class="modal-body">
+                      <form action="/newMedicine" method="POST">
+                        <div class="input-group mb-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="name"
+                            placeholder="name"
+                            aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default"
+                            required
+                          />
+                        </div>
+                        <div class="input-group mb-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="desc"
+                            placeholder="desc..."
+                            aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default"
+                            required
+                          />
+                        </div>
+                        <select
+                        name="selectPharmacy"
+                          class="form-select add__medicine mb-3"
+                          aria-label="Default select example"
+                          required
+                        >
+                          <option selected disabled>Select Pharmacy</option>
+                          <% pharmacies?.map((pharmacy) => { %>
+                          <option value="<%= pharmacy.id %> ">
+                            <%= pharmacy.name %>
+                          </option>
+                          <% }) %>
+                        </select>
+                        <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button
+                        type="submit"
+                        data-bs-dismiss="modal"
+                        class="btn btn-primary"
+                      >
+                        Add
+                      </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <form action="/what" method="POST" enctype="application/x-www-form-urlencoded">
+          <input class="footer_input-name" type="text" name="name" placeholder="name">
+          <input class="footer_input-surname" type="text" name="surname" placeholder="surname">
+          <button type="submit">send</button>
+        </form>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>

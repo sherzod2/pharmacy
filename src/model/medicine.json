@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "pharmacy_id": 3,
+        "name": "sitramon  ",
+        "desc": "sitramon shu turdagi dori ...  "
+    },
+    {
+        "id": 3,
+        "pharmacy_id": 1,
+        "name": "kupen",
+        "desc": "kupen shu turdagi dori ..."
+    },
+    {
+        "id": 4,
+        "pharmacy_id": 3,
+        "name": "parasetamon",
+        "desc": "parasetamon shu turdagi dori ..."
+    },
+    {
+        "id": 5,
+        "pharmacy_id": 2,
+        "name": "sitramon",
+        "desc": "sitramon shu turdagi dori ..."
+    },
+    {
+        "id": 6,
+        "pharmacy_id": 1,
+        "name": "furatsilin",
+        "desc": "furatsilin shu turdagi dori ..."
+    },
+    {
+        "id": 7,
+        "pharmacy_id": 3,
+        "name": "vazelin",
+        "desc": "vazelin shu turdagi dori ..."
+    },
+    {
+        "id": 8,
+        "pharmacy_id": 2,
+        "name": "vazelin",
+        "desc": "vazelin shu turdagi dori ..."
+    },
+    {
+        "id": 9,
+        "pharmacy_id": 1,
+        "name": "doctor mom",
+        "desc": "doctor mom shu turdagi dori ..."
+    },
+    {
+        "id": 10,
+        "pharmacy_id": 3,
+        "name": "sinaflan",
+        "desc": "sinaflan shu turdagi dori ..."
+    },
+    {
+        "id": 11,
+        "pharmacy_id": 2,
+        "name": "tetratskilin",
+        "desc": "tetratskilin shu turdagi dori ..."
+    },
+    {
+        "id": 12,
+        "pharmacy_id": 1,
+        "name": "kapsikam",
+        "desc": "kapsikam shu turdagi dori ..."
+    },
+    {
+        "id": 13,
+        "pharmacy_id": 3,
+        "name": "levomitsilin",
+        "desc": "levomitsilin shu turdagi dori ..."
+    },
+    {
+        "id": 14,
+        "pharmacy_id": 2,
+        "name": "streptatsid",
+        "desc": "streptatsid shu turdagi dori ..."
+    },
+    {
+        "id": 15,
+        "pharmacy_id": 1,
+        "name": "analgin",
+        "desc": "analgin shu turdagi dori ..."
+    },
+    {
+        "id": 16,
+        "pharmacy_id": 3,
+        "name": "dimedrol",
+        "desc": "dimedrol shu turdagi dori ..."
+    },
+    {
+        "id": 17,
+        "pharmacy_id": 2,
+        "name": "paxta",
+        "desc": "paxta shu turdagi dori ..."
+    },
+    {
+        "id": 18,
+        "pharmacy_id": 1,
+        "name": "sipirt",
+        "desc": "sipirt shu turdagi dori ..."
+    },
+    {
+        "id": 19,
+        "pharmacy_id": 3,
+        "name": "trimol",
+        "desc": "trimol shu turdagi dori ..."
+    },
+    {
+        "id": 20,
+        "pharmacy_id": 2,
+        "name": "dalgit",
+        "desc": "dalgit shu turdagi dori ..."
+    },
+    {
+        "id": 21,
+        "pharmacy_id": 1,
+        "name": "laktovita",
+        "desc": "laktovita shu turdagi dori ..."
+    },
+    {
+        "id": 22,
+        "pharmacy_id": 3,
+        "name": "lamvifariya",
+        "desc": "lamvifariya shu turdagi dori ..."
+    },
+    {
+        "id": 23,
+        "pharmacy_id": 2,
+        "name": "terafleks",
+        "desc": "terafleks shu turdagi dori ..."
+    },
+    {
+        "id": 24,
+        "pharmacy_id": 1,
+        "name": "oftalron",
+        "desc": "oftalron shu turdagi dori ..."
+    },
+    {
+        "id": 25,
+        "pharmacy_id": 3,
+        "name": "l-deksopt",
+        "desc": "l-deksopt shu turdagi dori ..."
+    },
+    {
+        "id": 26,
+        "pharmacy_id": 2,
+        "name": "septoleta total",
+        "desc": "septoleta total shu turdagi dori ..."
+    },
+    {
+        "id": 27,
+        "pharmacy_id": 1,
+        "name": "neyromiddin",
+        "desc": "neyromiddin shu turdagi dori ..."
+    },
+    {
+        "id": 28,
+        "pharmacy_id": 3,
+        "name": "nukleo",
+        "desc": "nukleo shu turdagi dori ..."
+    },
+    {
+        "id": 29,
+        "pharmacy_id": 2,
+        "name": "vitamin B",
+        "desc": "vitamin B shu turdagi dori ..."
+    },
+    {
+        "id": 30,
+        "pharmacy_id": 1,
+        "name": "vitamin C",
+        "desc": "vitamin C shu turdagi dori ..."
+    },
+    {
+        "id": 31,
+        "pharmacy_id": 3,
+        "name": "kaliy gulikanat",
+        "desc": "kaliy gulikanat shu turdagi dori ..."
+    }
+]

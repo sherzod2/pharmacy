@@ -1,0 +1,131 @@
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+.container {
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 1240px;
+}
+
+.hidden {
+  display: none;
+}
+/* GENERAL IS OVER */
+
+.header {
+  padding: 20px 0;
+}
+
+.dropdown {
+  width: 300px;
+  margin: 0 auto;
+}
+
+/* MAIN */
+.med-pharm__body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 50px 0;
+}
+
+.list-group-item {
+  transition: 0.2s;
+}
+
+.list-group-item:hover {
+  /* background-color: rgb(146, 146, 143); */
+}
+
+.add__body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.pharmacies__item,
+.medicines__item {
+  cursor: pointer;
+  padding: 8px 16px;
+}
+
+.pharmacies__list-li,
+.medicines__list-li {
+  position: relative;
+  padding: 0;
+}
+
+.pharmacies__edit,
+.pharmacies__delete,
+.medicines__delete,
+.medicines__edit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 5px;
+  border: none;
+  background-color: green;
+  padding: 3px 8px;
+  margin-left: auto;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+.pharmacies__delete,
+.medicines__delete {
+  right: 30px;
+  background-color: red;
+}
+
+.pharmacies__delete:hover,
+.pharmacies__edit:hover,
+.medicines__delete:hover,
+.medicines__edit:hover {
+  opacity: 0.6;
+}
+
+.footer {
+  padding: 100px 0;
+}
